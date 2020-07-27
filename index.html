@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Google Speech API</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 col-sm-12">
+                <h4 class="text-center"><br><br>
+                    Google Speech API — By Franklin Nunez
+                    <div id="clear" class="btn btn-danger">Clear</div>
+                </h4><br><br>
+
+                <div id="status"></div>
+                <div class="chat text-center">
+                    <br><br>
+                    <audio id="player"></audio>
+                    <audio id="player2" controls></audio>
+                    <br><br>
+                    <button id="stop" class="btn btn-warning" >Stop</button><br><br>
+                    <button id="start" class="btn btn-success" >Start</button><br><br>
+                    <div class="card">
+                        <div class="card-body" id="transcription">
+
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="./recorder.js"></script>
+
+    <script>
+        (() => {
+            // var element = (id) => {
+            //     return document.getElementById(id);
+            // }
+
+            // //get element
+            // var audio = element('audio');
+            // var status = element('status');
+            // var transcription = element('transcription');
+            
+            // //get the player object
+            // const player = element('player');
+
+            // //Set default status 
+            // var statusDefault = status.textContent;
+
+
+            // var setStatus = function(s){
+            //     //set status
+            //     status.textContent = s;
+
+            //     if(s !== statusDefault){
+            //         var delay = setTimeout( () => {
+            //             setStatus(statusDefault)
+            //         }, 4000);
+            //     }
+            // }
+
+
+            // //Connect to socket.io on the server side
+            // var socket = io.connect('http://127.0.0.1:4000');   
+
+            // //Check for connection
+            // if(socket !== undefined){
+            //     console.log('Connected to socket');
+
+            //     //------------------------------------AUDIO CREATION & TRANSMISSION----------------------------------
+
+            //     //---------------------------------------------------------------------------------------------------
+            //     //Handle output
+            //     socket.on('output', (data) => {
+
+            //         transcription.textContent = data;
+            //         console.log(`Data: ${data}`);
+            //     });
+
+
+            //     var obj = {
+            //         message: 'Hi there from the client on index.html'
+            //     }
+
+            //     socket.emit('audio', obj);
+            // }//END OF CONNECTION PROCESS
+
+        })();
+    </script>
+</body>
+</html>
